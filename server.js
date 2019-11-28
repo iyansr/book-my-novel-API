@@ -8,7 +8,7 @@ const fileUploads = require('express-fileupload');
 // const morgan = require('morgan');
 
 const server = express();
-const PORT = 9600 || process.env.PORT;
+const PORT =  process.env.PORT || 9600;
 
 server.use(cors());
 // server.use(morgan('dev'));
@@ -41,7 +41,7 @@ const start = async () => {
 	try {
 		await db.authenticate();
 		http.createServer(server).listen(PORT, () => {
-			console.log(`Server running on htpp://127.0.0.1:${PORT}`);
+			console.log(`Server running on ${PORT}`);
 		});
 	} catch (error) {
 		console.log('An error occured whil connecting to database:', error);
