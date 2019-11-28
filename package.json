@@ -1,0 +1,33 @@
+{
+  "name": "book-my-novel-api",
+  "version": "1.0.0",
+  "description": "Api For Book My Novel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "author": "Iyan Saputra",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.17.0",
+    "cors": "^2.8.5",
+    "date-fns": "^2.8.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
+    "helmet": "^3.21.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.24.0",
+    "mysql": "^2.17.1",
+    "mysql2": "^2.0.1",
+    "sequelize": "^5.21.2",
+    "uuid": "^3.3.3",
+    "validator": "^12.1.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.1"
+  }
+}
