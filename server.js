@@ -5,13 +5,13 @@ const db = require('./src/config/db');
 const route = require('./src/routes');
 const cors = require('cors');
 const fileUploads = require('express-fileupload');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 
 const server = express();
 const PORT = 9600 || process.env.PORT;
 
 server.use(cors());
-server.use(morgan('dev'));
+// server.use(morgan('dev'));
 server.use(express.static('./public'));
 server.use(
 	fileUploads({
