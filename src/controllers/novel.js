@@ -7,6 +7,7 @@ const { format } = require('date-fns');
 const validateNovelInput = require('../helpers/validator/novel');
 const HttpError = require('../helpers/HttpError');
 const jwt = require('jsonwebtoken');
+const moment = require('moment');
 
 const Novel = require('../models/novel');
 const NovelStatus = require('../models/novel_status');
@@ -81,6 +82,7 @@ module.exports = {
 					...finalRes,
 					Status: finalRes.Status.novel_status,
 					Genre: finalRes.Genre.genre,
+					createdAt: moment(finalRes.createdAt).format('YYYY MMM DD'),
 				};
 			});
 

@@ -1,20 +1,16 @@
+// whishlists;
 const Sequelize = require('sequelize');
 const db = require('../config/db');
 
-const Borrow = db.define(
-	'borrows',
+const Whishlist = db.define(
+	'whishlists',
 	{
-		borrow_id: {
+		wish_id: {
 			type: Sequelize.STRING,
 			primaryKey: true,
 		},
 		user_id: {
 			type: Sequelize.STRING,
-		},
-		date_borrow: Sequelize.DATEONLY,
-		date_return: Sequelize.DATEONLY,
-		returned: {
-			type: Sequelize.BOOLEAN,
 		},
 		novel_id: {
 			type: Sequelize.STRING,
@@ -23,4 +19,4 @@ const Borrow = db.define(
 	{ timestamps: false }
 );
 
-module.exports = Borrow;
+module.exports = Whishlist;
