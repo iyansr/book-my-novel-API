@@ -4,6 +4,12 @@ const whishController = require('../controllers/whishlist');
 const { verifyUser, verifyToken } = require('../helpers/auth');
 
 Router.get('/:user_id', verifyToken, verifyUser, whishController.getWhish);
+Router.get(
+	'/check/whish',
+	verifyToken,
+	verifyUser,
+	whishController.checkWhislist
+);
 Router.post('/:user_id', verifyToken, verifyUser, whishController.addWhish);
 Router.delete(
 	'/delete/whish',

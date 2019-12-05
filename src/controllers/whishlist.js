@@ -94,4 +94,28 @@ module.exports = {
 			HttpError.handle(res, error);
 		}
 	},
+	checkWhislist: async (req, res) => {
+		try {
+			const TOKEN = jwt.decode(req.token);
+			if (TOKEN.role !== 1) {
+				throw new HttpError(403, 'Forbidden', 'Cannot do this');
+			}
+			if (TOKEN.user_id !== req.query.user_id) {
+				throw new HttpError(405, 'Not Allowed', 'Cannot do this');
+			}
+
+			const whish = await Whishlist.findOne({
+				where: {
+					user_id: req.query.user_id,
+					novel_id: req.query.novel_id,
+				},
+			});
+
+			if (!whish) return res.json(false);
+
+			res.json(true);
+		} catch (error) {
+			HttpError.handle(res, error);
+		}
+	},
 };
