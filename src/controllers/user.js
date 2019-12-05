@@ -123,9 +123,7 @@ module.exports = {
 
 			if (compareSync(req.body.password, parsedUser.password)) {
 				delete parsedUser.password;
-				const token = sign(parsedUser, process.env.JWT_SECRET, {
-					expiresIn: '3days',
-				});
+				const token = sign(parsedUser, process.env.JWT_SECRET);
 				res.json(token);
 			} else {
 				throw new HttpError(400, 'Bad Request', {
