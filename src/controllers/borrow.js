@@ -191,6 +191,7 @@ module.exports = {
 					returned: false,
 				},
 			});
+			if (!borrow) res.json(false);
 			res.json(true);
 		} catch (error) {
 			HttpError.handle(res, error);
